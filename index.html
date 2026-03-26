@@ -10,124 +10,179 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <div class="logo">Jéssica Tozi</div>
+  <div class="container-header">
+    <div class="logo">Jéssica Tozi Confeitaria</div>
 
-  <nav class="nav">
-    <a href="#inicio">Início</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#encomendas">Encomendas</a>
-    <a href="#contato">Contato</a>
-  </nav>
+    <nav class="nav">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#encomendas">Encomendas</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
 
-  <a href="#encomendas" class="btn-header">Peça já o seu</a>
+    <a href="https://wa.me/553592473598" target="_blank" class="btn-header">Faça seu Pedido</a>
+  </div>
 </header>
 
-<!-- HERO -->
 <section id="inicio" class="hero">
-  <h1>Transformando momentos em doces memórias</h1>
-  <p>Bolos artesanais e doces feitos com amor</p>
-  <a href="#encomendas" class="btn">Encomendar agora</a>
-</section>
+  <div class="overlay"></div>
 
-<!-- PRODUTOS -->
-<section id="produtos" class="produtos">
-  <h2>Mais vendidos</h2>
+  <div class="hero-content reveal">
+    <p class="tag">CONFEITARIA ARTESANAL</p>
 
-  <div class="grid">
-    <div class="card">
-      <img src="./assets/img/bolo.jpg" alt="">
-      <h3>Bolos Decorados</h3>
-    </div>
+    <h1>Transformamos<br>momentos em <span>doces memórias</span></h1>
 
-    <div class="card">
-      <img src="./assets/img/doce.jpg" alt="">
-      <h3>Doces Finos</h3>
-    </div>
+    <p class="sub">
+      Cada doce é feito com amor, ingredientes selecionados e dedicação.
+    </p>
 
-    <div class="card">
-      <img src="./assets/img/kit.jpg" alt="">
-      <h3>Kits Presente</h3>
+    <div class="hero-buttons">
+      <a href="https://wa.me/553592473598" target="_blank" class="btn-primary">Faça seu Pedido</a>
+      <a href="#produtos" class="btn-outline">Ver Produtos</a>
     </div>
   </div>
 </section>
 
-<!-- GALERIA -->
-<section id="galeria" class="galeria">
-  <h2>Galeria</h2>
+<section id="sobre" class="sobre reveal">
+  <div class="container sobre-content">
+    <div class="sobre-img">
+      <img src="./assets/img/jessica-tozi-confeitaria1.png">
+    </div>
 
-  <div class="grid">
-    <img src="./assets/img/bolo1.jpg">
-    <img src="./assets/img/bolo2.jpg">
-    <img src="./assets/img/bolo3.jpg">
+    <div class="sobre-text">
+      <p class="tag">NOSSA HISTÓRIA</p>
+      <h2>Sobre a <span>Jéssica Tozi Confeitaria</span></h2>
+
+      <p>
+        Tudo começou em uma cozinha pequena, com uma receita de família e o sonho de transformar momentos em algo ainda mais doce.
+      </p>
+
+      <div class="info">
+        <p><strong>Missão:</strong> Criar doces que encantam</p>
+        <p><strong>Visão:</strong> Ser referência em confeitaria</p>
+        <p><strong>Valores:</strong> Qualidade e dedicação</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="sobre">
-  <h2>Sobre</h2>
-  <p>Confeitaria artesanal apaixonada por criar doces que tornam momentos especiais inesquecíveis.</p>
-</section>
-
-<!-- ENCOMENDAS -->
-<section id="encomendas" class="encomendas">
+<section id="produtos" class="produtos reveal">
   <div class="container">
-    <h2>Faça sua encomenda</h2>
-    <p>Preencha o formulário e retornaremos o mais rápido possível</p>
+    <p class="tag center">NOSSOS PRODUTOS</p>
+    <h2 class="center">Feitos com <span>amor</span></h2>
+
+    <div class="grid">
+      <div class="card">
+        <img src="./assets/img/bolo1.jpeg">
+        <h3>Bolo de Casamento</h3>
+        <p>Decorado com flores naturais</p>
+        <a href="https://wa.me/553592473598" target="_blank">
+          <button>Pedir</button>
+        </a>
+      </div>
+
+      <div class="card">
+        <img src="./assets/img/bolo2.jpeg">
+        <h3>Bolo de Chocolate</h3>
+        <p>Chocolate intenso</p>
+        <a href="https://wa.me/553592473598" target="_blank">
+          <button>Pedir</button>
+        </a>
+      </div>
+
+      <div class="card">
+        <img src="./assets/img/bolo3.jpeg">
+        <h3>Macarons</h3>
+        <p>Delicados e coloridos</p>
+        <a href="https://wa.me/553592473598" target="_blank">
+          <button>Pedir</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="depoimentos reveal">
+  <div class="container">
+    <h2 class="center">Depoimentos</h2>
+
+    <div class="grid">
+      <div class="depoimento-card">
+        <p>"Perfeito! Amei!"</p>
+        <strong>Cliente</strong>
+      </div>
+
+      <div class="depoimento-card">
+        <p>"Muito capricho."</p>
+        <strong>Cliente</strong>
+      </div>
+
+      <div class="depoimento-card">
+        <p>"Voltarei a comprar!"</p>
+        <strong>Cliente</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="encomendas" class="encomendas reveal">
+  <div class="container">
+    <h2 class="center">Pedido Personalizado</h2>
 
     <form class="form">
-
-      <div class="input-group">
-        <label>Nome</label>
-        <input type="text" placeholder="Seu nome completo" required>
+      <div class="form-row">
+        <input id="nome" placeholder="Nome">
+        <input id="telefone" placeholder="Telefone">
       </div>
 
-      <div class="input-group">
-        <label>WhatsApp</label>
-        <input type="tel" placeholder="(xx) xxxxx-xxxx" required>
-      </div>
+      <textarea id="descricao" placeholder="Descreva seu pedido"></textarea>
 
-      <div class="input-group">
-        <label>Tipo de pedido</label>
-        <select required>
-          <option value="">Selecione</option>
-          <option>Bolo personalizado</option>
-          <option>Doces finos</option>
-          <option>Kits presente</option>
-        </select>
-      </div>
-
-      <div class="input-group">
-        <label>Data desejada</label>
-        <input type="date" required>
-      </div>
-
-      <div class="input-group">
-        <label>Detalhes do pedido</label>
-        <textarea placeholder="Descreva o que você deseja"></textarea>
-      </div>
-
-      <button type="submit" class="btn-form">
-        Enviar pedido
-      </button>
-
+      <button type="submit" class="btn-form">Enviar</button>
     </form>
   </div>
 </section>
 
-<!-- CONTATO -->
-<section id="contato" class="contato">
-  <h2>Contato</h2>
-  <p>Cambuí - MG</p>
-  <p>WhatsApp: (xx) xxxxx-xxxx</p>
+<section id="galeria" class="galeria reveal">
+  <div class="container">
+    <h2 class="center">Galeria</h2>
+
+    <div class="grid">
+      <img src="./assets/img/bolo1.jpeg">
+      <img src="./assets/img/bolo2.jpeg">
+      <img src="./assets/img/bolo3.jpeg">
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+<footer class="footer">
   <p>© 2026 Jéssica Tozi Confeitaria</p>
 </footer>
+
+<script>
+document.querySelector(".form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const telefone = document.getElementById("telefone").value;
+  const descricao = document.getElementById("descricao").value;
+
+  const msg = `Olá! Pedido:%0A Nome:${nome}%0A Telefone:${telefone}%0A Pedido:${descricao}`;
+
+  window.open(`https://wa.me/553592473598?text=${msg}`);
+});
+
+function revealOnScroll() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+</script>
 
 </body>
 </html>
