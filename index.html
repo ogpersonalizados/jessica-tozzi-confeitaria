@@ -6,6 +6,8 @@
   <title>Jéssica Tozi Confeitaria</title>
 
   <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -46,36 +48,85 @@
   </div>
 </section>
 
+<!-- SOBRE -->
 <section id="sobre" class="sobre reveal">
   <div class="container sobre-content">
+
+    <!-- IMAGEM -->
     <div class="sobre-img">
-      <img src="./assets/img/jessica-tozi-confeitaria1.png">
-    </div>
+      <img src="./assets/img/jessica-tozi-confeitaria1.png" alt="Confeiteira">
 
-    <div class="sobre-text">
-      <p class="tag">NOSSA HISTÓRIA</p>
-      <h2>Sobre a <span>Jéssica Tozi Confeitaria</span></h2>
-
-      <p>
-        Tudo começou em uma cozinha pequena, com uma receita de família e o sonho de transformar momentos em algo ainda mais doce.
-      </p>
-
-      <div class="info">
-        <p><strong>Missão:</strong> Criar doces que encantam</p>
-        <p><strong>Visão:</strong> Ser referência em confeitaria</p>
-        <p><strong>Valores:</strong> Qualidade e dedicação</p>
+      <div class="badge">
+        <strong>10+</strong>
+        <span>Anos de experiência</span>
       </div>
     </div>
+
+    <!-- TEXTO -->
+    <div class="sobre-text">
+      <p class="tag">NOSSA HISTÓRIA</p>
+
+      <h2>
+        Sobre a <span>Jéssica Tozi Confeitaria</span>
+      </h2>
+
+      <p>
+        Tudo começou em uma cozinha pequena, com uma receita de família e o sonho de transformar momentos em algo ainda mais doce. Jéssica, confeiteira apaixonada, encontrou na confeitaria sua forma de expressar amor e criatividade.
+      </p>
+
+      <p>
+        Hoje, a Jéssica Tozi Confeitaria é sinônimo de qualidade, dedicação e sabor. Cada doce é preparado artesanalmente com ingredientes selecionados, pensado para tornar seu momento especial.
+      </p>
+
+      <!-- ITENS -->
+      <div class="info-box">
+
+        <div class="info-item">
+          <div class="icon">❤️</div>
+          <div>
+            <h4>Missão</h4>
+            <p>Criar doces que toquem o coração e marquem momentos especiais com sabor e carinho.</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">🎯</div>
+          <div>
+            <h4>Visão</h4>
+            <p>Ser referência em confeitaria artesanal, reconhecida pela qualidade e criatividade.</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">⭐</div>
+          <div>
+            <h4>Valores</h4>
+            <p>Excelência, dedicação, ingredientes de qualidade e amor em cada detalhe.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
 <section id="produtos" class="produtos reveal">
   <div class="container">
-    <p class="tag center">NOSSOS PRODUTOS</p>
-    <h2 class="center">Feitos com <span>amor</span></h2>
+  <p class="tag center">NOSSOS PRODUTOS</p>
+<h2 class="titulo center">
+  Feitos com <span>amor</span> e dedicação
+</h2>
+
+    <div class="filtros">
+  <button class="filtro-btn active" data-filtro="todos">Todos</button>
+  <button class="filtro-btn" data-filtro="bolos">Bolos</button>
+  <button class="filtro-btn" data-filtro="doces">Doces</button>
+  <button class="filtro-btn" data-filtro="kits">Kits</button>
+</div>
 
     <div class="grid">
-      <div class="card">
+      <div class="card" data-categoria="bolos">
         <img src="./assets/img/bolo1.jpeg">
         <h3>Bolo de Casamento</h3>
         <p>Decorado com flores naturais</p>
@@ -84,7 +135,7 @@
         </a>
       </div>
 
-      <div class="card">
+      <div class="card" data-categoria="bolos">
         <img src="./assets/img/bolo2.jpeg">
         <h3>Bolo de Chocolate</h3>
         <p>Chocolate intenso</p>
@@ -93,7 +144,7 @@
         </a>
       </div>
 
-      <div class="card">
+      <div class="card" data-categoria="bolos">
         <img src="./assets/img/bolo3.jpeg">
         <h3>Macarons</h3>
         <p>Delicados e coloridos</p>
@@ -107,7 +158,10 @@
 
 <section class="depoimentos reveal">
   <div class="container">
-    <h2 class="center">Depoimentos</h2>
+    <P class="tag center">DEPOIMENTOS</P>
+    <h2 class="titulo center">
+  O que nossas clientes <span>dizem</span> 
+</h2>
 
     <div class="grid">
       <div class="depoimento-card">
@@ -130,59 +184,229 @@
 
 <section id="encomendas" class="encomendas reveal">
   <div class="container">
-    <h2 class="center">Pedido Personalizado</h2>
+
+    <p class="tag center">ENCOMENDAS</p>
+    <h2 class="titulo center">Pedido <span>Personalizado</span></h2>
+
+    <p class="sub center">
+      Quer algo especial? Preencha o formulário e entraremos em contato para criar o doce perfeito para sua ocasião.
+    </p>
 
     <form class="form">
+
       <div class="form-row">
-        <input id="nome" placeholder="Nome">
-        <input id="telefone" placeholder="Telefone">
+        <div class="input-group">
+          <label>Nome</label>
+          <input type="text" placeholder="Seu nome">
+        </div>
+
+        <div class="input-group">
+          <label>Telefone</label>
+          <input type="tel" placeholder="(00) 00000-0000">
+        </div>
       </div>
 
-      <textarea id="descricao" placeholder="Descreva seu pedido"></textarea>
+      <div class="form-row">
+        <div class="input-group">
+          <label>Tipo do Pedido</label>
+          <select>
+            <option>Selecione...</option>
+            <option>Bolo</option>
+            <option>Doces</option>
+            <option>Kits</option>
+          </select>
+        </div>
 
-      <button type="submit" class="btn-form">Enviar</button>
+        <div class="input-group">
+          <label>Data do Evento</label>
+          <input type="date">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Descrição</label>
+        <textarea placeholder="Descreva seu pedido: tema, sabor, quantidade, detalhes..."></textarea>
+      </div>
+
+      <button type="button" class="btn-form" onclick="enviarWhatsApp()">
+        Enviar pelo WhatsApp
+      </button>
+
     </form>
+
   </div>
 </section>
 
 <section id="galeria" class="galeria reveal">
   <div class="container">
-    <h2 class="center">Galeria</h2>
+    <p class="tag center">GALERIA</p>
+    <h2 class="titulo center">Nossos <span>trabalhos</span></h2>
 
     <div class="grid">
       <img src="./assets/img/bolo1.jpeg">
       <img src="./assets/img/bolo2.jpeg">
-      <img src="./assets/img/bolo3.jpeg">
+      <img src="./assets/img/bolo4.jpeg">
     </div>
   </div>
 </section>
 
+<a href="https://wa.me/553592473598?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!" 
+   class="whatsapp-float" 
+   target="_blank">
+
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+
+</a>
+
+<!-- CONTATO -->
+<section id="contato" class="contato reveal">
+  <div class="container contato-content">
+
+    <!-- LADO ESQUERDO -->
+    <div class="contato-info">
+
+      <div class="info-item">
+        <div class="icon">📍</div>
+        <div>
+          <h4>Localização</h4>
+          <p>Cambuí, MG</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon">⏰</div>
+        <div>
+          <h4>Horário</h4>
+          <p>Seg - Sex: 8h às 18h</p>
+          <p>Sáb: 8h às 14h</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon">📞</div>
+        <div>
+          <h4>Telefone</h4>
+          <p>(35) 99247-3598</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LADO DIREITO -->
+    <div class="contato-acoes">
+
+      <a href="https://wa.me/5535992473598" target="_blank" class="btn-whatsapp">
+  <i class="fa-brands fa-whatsapp"></i> WhatsApp
+</a>
+
+  <a href="https://www.instagram.com/jessicatozzi_confeitaria/" class="btn-instagram">
+  <i class="fa-brands fa-instagram"></i> @jessicatozi
+</a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 Jéssica Tozi Confeitaria</p>
+  <h3>Jéssica Tozi Confeitaria</h3>
+  <p>© 2026 Jéssica Tozi Confeitaria. Todos os direitos reservados.</p>
 </footer>
 
 <script>
-document.querySelector(".form").addEventListener("submit", function(e){
-  e.preventDefault();
 
-  const nome = document.getElementById("nome").value;
-  const telefone = document.getElementById("telefone").value;
-  const descricao = document.getElementById("descricao").value;
+// ==========================
+// ANIMAÇÕES + HEADER + CARDS
+// ==========================
+function handleScroll() {
 
-  const msg = `Olá! Pedido:%0A Nome:${nome}%0A Telefone:${telefone}%0A Pedido:${descricao}`;
-
-  window.open(`https://wa.me/553592473598?text=${msg}`);
-});
-
-function revealOnScroll() {
+  // REVEAL
   document.querySelectorAll('.reveal').forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add('active');
     }
   });
+
+  // CARDS (efeito cascata)
+  document.querySelectorAll('.card').forEach((card, index) => {
+    const top = card.getBoundingClientRect().top;
+
+    if (top < window.innerHeight - 50) {
+      setTimeout(() => {
+        card.classList.add('show');
+      }, index * 120);
+    }
+  });
+
+  // HEADER
+  const header = document.querySelector(".header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
 }
-window.addEventListener('scroll', revealOnScroll);
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
+
+
+// ==========================
+// FILTRO DE PRODUTOS
+// ==========================
+const botoes = document.querySelectorAll(".filtro-btn");
+const cards = document.querySelectorAll(".card");
+
+botoes.forEach(botao => {
+  botao.addEventListener("click", () => {
+
+    botoes.forEach(btn => btn.classList.remove("active"));
+    botao.classList.add("active");
+
+    const filtro = botao.getAttribute("data-filtro");
+
+    cards.forEach(card => {
+      const categoria = card.getAttribute("data-categoria");
+
+      card.style.display =
+        (filtro === "todos" || filtro === categoria)
+        ? "block"
+        : "none";
+    });
+
+  });
+});
+
+
+// ==========================
+// WHATSAPP (FORMULÁRIO)
+// ==========================
+function enviarWhatsApp() {
+  const nome = document.querySelector('input[type="text"]').value;
+  const telefone = document.querySelector('input[type="tel"]').value;
+  const tipo = document.querySelector('select').value;
+  const data = document.querySelector('input[type="date"]').value;
+  const descricao = document.querySelector('textarea').value;
+
+  const mensagem = `Olá! Gostaria de fazer um pedido:
+
+👤 Nome: ${nome}
+📞 Telefone: ${telefone}
+🎂 Tipo: ${tipo}
+📅 Data: ${data}
+📝 Detalhes: ${descricao}`;
+
+  const numero = "553592473598";
+
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, '_blank');
+}
+
 </script>
+
 
 </body>
 </html>
