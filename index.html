@@ -14,7 +14,9 @@
 
 <header class="header">
   <div class="container-header">
-    <div class="logo">Jéssica Tozi Confeitaria</div>
+    <div class="logo">
+  <img src="./assets/img/logo.jpeg" alt="Jéssica Tozi Confeitaria">
+</div>
 
     <nav class="nav">
       <a href="#inicio">Início</a>
@@ -54,7 +56,7 @@
 
     <!-- IMAGEM -->
     <div class="sobre-img">
-      <img src="./assets/img/jessica-tozi-confeitaria1.png" alt="Confeiteira">
+      <img src="./assets/img/jessica-tozzi-confeitaria3.png" alt="Confeiteira">
 
       <div class="badge">
         <strong>6+</strong>
@@ -414,6 +416,15 @@ function handleScroll() {
   } else {
     header.classList.remove("scrolled");
   }
+  window.addEventListener("scroll", function() {
+  const header = document.querySelector(".header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
 }
 
 window.addEventListener('scroll', handleScroll);
