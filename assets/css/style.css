@@ -446,8 +446,12 @@ section h2 {
 .card img {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
   transition: 0.4s;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover img {
@@ -455,13 +459,12 @@ section h2 {
 }
 
 .card h3 {
-  padding: 15px;
+  padding: 15px 15px 5px;
 }
 
 .card p {
-  padding: 0 15px 15px;
-  color: var(--cinza);
-  font-size: 14px;
+  padding: 0 15px;
+  flex-grow: 1;
 }
 
 .card button {
