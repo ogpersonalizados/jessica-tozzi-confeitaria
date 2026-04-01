@@ -240,47 +240,61 @@ Tudo preparado com muito carinho, sabor e qualidade para sua festa ser um sucess
       Quer algo especial? Preencha o formulário e entraremos em contato para criar o doce perfeito para sua ocasião.
     </p>
 
-    <form class="form">
+<form class="form">
 
-      <div class="form-row">
-        <div class="input-group">
-          <label>Nome</label>
-          <input type="text" placeholder="Seu nome">
-        </div>
+  <div class="form-row">
+    <div class="input-group">
+      <label>Nome</label>
+      <input type="text" id="nome" placeholder="Seu nome">
+    </div>
 
-        <div class="input-group">
-          <label>Telefone</label>
-          <input type="tel" placeholder="(00) 00000-0000">
-        </div>
-      </div>
+    <div class="input-group">
+      <label>Telefone</label>
+      <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+    </div>
+  </div>
 
-      <div class="form-row">
-        <div class="input-group">
-          <label>Tipo do Pedido</label>
-          <select>
-            <option>Selecione...</option>
-            <option>Bolo</option>
-            <option>Doces</option>
-            <option>Kits</option>
-          </select>
-        </div>
+  <div class="form-row">
+    <div class="input-group">
+      <label>Tipo do Pedido</label>
+      <select id="tipo">
+        <option value="">Selecione...</option>
+        <option>Bolo</option>
+        <option>Doces</option>
+        <option>Kits</option>
+      </select>
+    </div>
 
-        <div class="input-group">
-          <label>Data do Evento</label>
-          <input type="date">
-        </div>
-      </div>
+    <div class="input-group">
+      <label>Data do Evento</label>
+      <input type="date" id="data">
+    </div>
+  </div>
 
-      <div class="input-group">
-        <label>Descrição</label>
-        <textarea placeholder="Descreva seu pedido: tema, sabor, quantidade, detalhes..."></textarea>
-      </div>
+  <div class="input-group">
+    <label>Descrição</label>
+    <textarea id="descricao" placeholder="Descreva seu pedido: tema, sabor, quantidade, detalhes..."></textarea>
+  </div>
 
-      <button type="button" class="btn-form" onclick="enviarWhatsApp()">
-        Enviar pelo WhatsApp
-      </button>
+  <!-- PREVIEW DA MENSAGEM -->
+  <div id="preview" style="
+    margin: 15px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+  ">
+    <strong>Prévia da mensagem:</strong><br>
+    Preencha os campos para visualizar...
+  </div>
 
-    </form>
+  <button type="button" class="btn-form" onclick="enviarWhatsApp()">
+    Enviar pelo WhatsApp
+  </button>
+
+</form>
 
   </div>
 </section>
@@ -431,23 +445,40 @@ botoes.forEach(botao => {
 // ==========================
 // WHATSAPP (FORMULÁRIO)
 // ==========================
-function enviarWhatsApp() {
-  const nome = document.querySelector('input[type="text"]').value;
-  const telefone = document.querySelector('input[type="tel"]').value;
-  const tipo = document.querySelector('select').value;
-  const data = document.querySelector('input[type="date"]').value;
-  const descricao = document.querySelector('textarea').value;
+const nome = document.getElementById("nome");
+const telefone = document.getElementById("telefone");
+const tipo = document.getElementById("tipo");
+const data = document.getElementById("data");
+const descricao = document.getElementById("descricao");
+const preview = document.getElementById("preview");
 
+function atualizarPreview() {
+  preview.innerHTML = `
+    <strong>Prévia da mensagem:</strong><br>
+    👤 Nome: ${nome.value || "-"}<br>
+    📞 Telefone: ${telefone.value || "-"}<br>
+    🎂 Tipo: ${tipo.value || "-"}<br>
+    📅 Data: ${data.value || "-"}<br>
+    📝 ${descricao.value || "-"}
+  `;
+}
+
+// Atualiza enquanto digita
+[nome, telefone, tipo, data, descricao].forEach(campo => {
+  campo.addEventListener("input", atualizarPreview);
+});
+
+// Enviar WhatsApp
+function enviarWhatsApp() {
   const mensagem = `Olá! Gostaria de fazer um pedido:
 
-👤 Nome: ${nome}
-📞 Telefone: ${telefone}
-🎂 Tipo: ${tipo}
-📅 Data: ${data}
-📝 Detalhes: ${descricao}`;
+👤 Nome: ${nome.value}
+📞 Telefone: ${telefone.value}
+🎂 Tipo: ${tipo.value}
+📅 Data: ${data.value}
+📝 Detalhes: ${descricao.value}`;
 
   const numero = "553592473598";
-
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
   window.open(url, '_blank');
