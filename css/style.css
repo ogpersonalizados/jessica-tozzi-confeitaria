@@ -170,7 +170,7 @@ section h2 {
 ======================= */
 .hero {
   height: 100vh;
-  background: url('../img/foto-confeitaria.jpeg') center center/cover no-repeat;
+  background: url('/assets/img/foto-confeitaria.jpeg') center center/cover no-repeat;
   display: flex;
   align-items: center;
   position: relative;
