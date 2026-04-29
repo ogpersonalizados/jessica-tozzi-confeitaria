@@ -28,12 +28,45 @@ html {
 }
 
 /* =======================
+   BARRA PROMOCIONAL
+======================= */
+
+.promo-bar {
+  background: #c06c84;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2000;
+}
+
+.promo-bar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.promo-bar a {
+  color: #fff;
+  font-weight: bold;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+/* =======================
    HEADER
 ======================= */
 .header {
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 40PX;
   z-index: 1000;
   background: #f5e8d8; /* bege elegante */
   border-bottom: 1px solid rgba(0,0,0,0.05);

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- =========================
+     FAVICON
+========================= -->
+<link rel="icon" type="image/png" href="../img/favicon-rosa.png">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dia das Mães | Jéssica Tozi Confeitaria</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+
+    /* =========================
+   NAVBAR
+========================= */
+.navbar-maes {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #f5e8d8;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+/* LOGO */
+.nav-logo img {
+  height: 80px;
+}
+
+/* BOTÃO VOLTAR */
+.btn-voltar {
+  background: #d98ca0;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-voltar:hover {
+  background: #c06c84;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-logo img {
+    height: 45px;
+  }
+}
+    /* =========================
+       HERO (SEM CORTE - NOVO)
+    ========================= */
+    .hero-maes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f5e8d8;
+      padding: 20px 0;
+    }
+
+    .hero-maes img {
+      width: 100%;
+      max-width: 1920px;
+      height: auto;
+      display: block;
+    }
+
+    /* RESPONSIVO HERO */
+    @media (max-width: 768px) {
+      .hero-maes {
+        padding: 10px;
+      }
+    }
+
+    /* =========================
+       KITS
+    ========================= */
+    .kits {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .kit-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .kit-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .kit-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain; /* 🔥 NÃO CORTA MAIS IMAGEM */
+      background: #fff;
+    }
+
+    .kit-card h3 {
+      padding: 15px;
+    }
+
+    .kit-card p {
+      padding: 0 15px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .preco {
+      font-weight: bold;
+      color: #c06c84;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .kit-card a {
+      display: block;
+      margin: 15px;
+      padding: 12px;
+      background: #d98ca0;
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    /* =========================
+       PARCERIA
+    ========================= */
+    .parceria {
+      background: #fff0f4;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    /* =========================
+       CONDIÇÕES
+    ========================= */
+    .condicoes {
+      background: #f7f3f4;
+      padding: 60px 20px;
+    }
+
+    .condicoes ul {
+      max-width: 700px;
+      margin: auto;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       CTA FINAL
+    ========================= */
+    .cta-final {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta-final h2 {
+  margin-bottom: 15px;
+}
+
+.cta-final p {
+  margin-bottom: 25px;
+}
+
+.cta-final .btn-primary {
+  display: inline-block;
+  margin-top: 10px;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+     NAVBAR
+========================= -->
+<header class="navbar-maes">
+
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <img src="../img/favicon-rosa.png" alt="Jéssica Tozi Confeitaria">
+    </div>
+
+    <!-- BOTÃO VOLTAR -->
+    <a href="/index.html" class="btn-voltar">
+      ← Voltar para o site
+    </a>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+<section class="hero-maes">
+  <img src="../img/banner-hero-parceria.png" alt="Banner Dia das Mães">
+</section>
+
+<!-- PARCERIA -->
+<section class="parceria">
+  <h2 class="titulo">Uma parceria <span>especial</span></h2>
+
+  <p>
+    Neste Dia das Mães, a Jéssica Tozi Confeitaria se uniu à OG Criativo para criar
+    presentes ainda mais únicos e personalizados.
+  </p>
+
+  <p style="margin-top:10px;">
+    Kits exclusivos com doces artesanais e canecas personalizadas,
+    tornando o presente ainda mais especial e inesquecível 💝
+  </p>
+</section>
+
+<!-- KITS -->
+<section class="kits">
+  <h2 class="titulo">Nossos <span>Kits Especiais</span></h2>
+
+  <div class="grid">
+
+
+        <!-- CESTA LUXO -->
+    <div class="kit-card">
+      <img src="../img/cesta-luxo-og.png">
+      <h3>Cesta Luxo ✨</h3>
+
+      <p>Bolo caseiro + calda em pote de vidro + flores artificiais + caneca personalizada</p>
+      <p>Embalagem em caixa de madeira</p>
+
+      <p><strong>Sabores:</strong> Chocolate, Tradicional, Fubá, Limão, Laranja, Coco</p>
+      <p><strong>Caldas:</strong> Chocolate, Ninho, Goiabada, Limão, Laranja, Beijinho</p>
+
+      <div class="preco">R$ 150,00</div>
+
+      <a href="https://wa.me/553592473598" target="_blank">Fazer Pedido</a>
+    </div>
+
+
+        <!-- KIT AMOR QUE FICA -->
+<div class="kit-card">
+  <img src="../img/kit-amor-que-fica.png" alt="Kit Amor que Fica">
+
+  <h3>Kit Amor que Fica 💖</h3>
+
+  <p>
+    Surpreenda sua mãe com um presente que vai além do momento.
+  </p>
+
+  <p>
+    Este kit foi pensado para emocionar e permanecer no dia a dia,
+    trazendo lembranças especiais sempre por perto.
+  </p>
+
+  <p><strong>Inclui:</strong></p>
+  <p>• Caneca personalizada com foto, nome ou mensagem</p>
+  <p>• Porta-joias elegante</p>
+  <p>• Buquê de flores decorativas</p>
+  <p>• Embalagem especial pronta para presentear</p>
+
+  <p>💝 Um presente único, delicado e cheio de significado</p>
+
+  <div class="preco">130,00</div>
+
+  <a href="https://wa.me/5535992660184?text=Olá! Tenho interesse no Kit Amor que Fica 💖" target="_blank">
+    Fazer Pedido
+  </a>
+</div>
+
+
+    <!-- CESTA AMOR -->
+    <div class="kit-card">
+      <img src="../img/cesta-amor.png">
+      <h3>Cesta Amor 🌸</h3>
+
+      <p>Bolo caseiro + calda em pote + flores artificiais</p>
+      <p>Embalagem em caixa de madeira</p>
+
+      <p><strong>Sabores:</strong> Chocolate, Tradicional, Fubá, Limão, Laranja, Coco</p>
+      <p><strong>Caldas:</strong> Chocolate, Ninho, Goiabada, Limão, Laranja, Beijinho</p>
+
+      <div class="preco">R$ 120,00</div>
+
+      <a href="https://wa.me/553592473598" target="_blank">Fazer Pedido</a>
+    </div>
+
+    <!-- BOLO NA CANECA -->
+    <div class="kit-card">
+      <img src="../img/bolo-na-caneca-og (3).png">
+      <h3>Bolos na Caneca 💖</h3>
+
+      <p><strong>Amor em Camadas:</strong> massa branca + brigadeiro de ninho + brigadeiro ao leite</p>
+      <p><strong>Encanto de Chocolate:</strong> massa de chocolate + brigadeiro ao leite</p>
+      <p><strong>Doce Abraço:</strong> chocolate + mousse de ninho + morango + brigadeiro</p>
+
+      <p>Inclui caneca personalizável</p>
+
+      <div class="preco">R$ 90,00</div>
+
+      <a href="https://wa.me/553592473598" target="_blank">Fazer Pedido</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONDIÇÕES -->
+<section class="condicoes">
+  <h2 class="titulo center">Condições <span>Especiais</span></h2>
+
+  <ul>
+    <li>✔ Encomendas até 06 de Maio de 2026</li>
+    <li>✔ Pagamento 100% antecipado via Pix, Débito ou Crédito</li>
+    <li>✔ Personalização com foto e/ou mensagem especial</li>
+    <li>✔ Pedidos corporativos sob consulta de prazo</li>
+    <li>✔ Entregas dia 10 de Maio (manhã) — consultar taxa</li>
+  </ul>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>💌 Garanta já o presente perfeito</h2>
+  <p>Surpreenda sua mãe com um presente único e cheio de amor</p>
+
+  <a href="https://wa.me/553592473598?text=Olá! Tenho interesse nos kits do Dia das Mães 💖" 
+     class="btn-primary" target="_blank">
+    Pedir pelo WhatsApp
+  </a>
+</section>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/553592473598?text=Olá! Vim pela campanha de Dia das Mães 💖" 
+   class="whatsapp-float" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+</body>
+</html>
