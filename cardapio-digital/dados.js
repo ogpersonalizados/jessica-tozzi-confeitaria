@@ -10,7 +10,7 @@ const estabelecimento = {
         "Doces feitos com carinho para momnetos especiais.",
 
     whatsapp:
-        "5535992462007",
+        "5535992473598",
 
          logo: "imagens/favicon-com-fundo.png",
 
@@ -235,94 +235,113 @@ const produtos = [
     // KITS
     // ===================================================== 
 
-    {
-        id: 7,
-        nome: "Kit Festa",
-        categoria: "Kits",
-        descricao: "Uma combinação deliciosa para deixar sua comemoração ainda mais especial. Bolo de massa branca, fofinha e molhadinha, acompanhado de brigadeiros, salgados bem recheados e Coca-Cola. Tudo preparado com carinho para você aproveitar cada momento.",
-        imagem: "imagens/kits/kit-festa.jpeg",
-        possuiOpcoes: false,
-        preco: 109.50,
+{
+    id: 7,
 
-        opcoes: [
+    nome: "Kit Festa",
 
-    {
-        nome: "Sabor do recheio",
-        tipo: "radio",
+    categoria: "Kits",
 
-        valores: [
-            {
-                nome: "Brigadeiro",
-                
-            },
-            {
-                nome: "Prestígio",
-                
-            },
-            {
-                nome: "Ninho",
-                
-            }
-        ]
-    },
+    descricao:
+        "Uma combinação deliciosa para deixar sua comemoração ainda mais especial.",
 
-    {
-        nome: "Salgado",
-        tipo: "radio",
+    imagem: "imagens/kits/kit-festa.jpeg",
 
-        valores: [
-            {
-                nome: "Coxinha",
-                
-            },
-            {
-                nome: "Risole",
-                
-            },
-            {
-                nome: "Bolinha de queijo",
-                
-            }
-        ]
-    },
+    possuiOpcoes: true,
 
-    {
-        nome: "Doce",
-        tipo: "radio",
+    preco: 109,
 
-        valores: [
-            {
-                nome: "Brigadeiro",
-                
-            },
-            {
-                nome: "Beijinho",
-                
-            }
-        ]
-    },
+    opcoes: [
 
-    {
-        nome: "Refrigerante",
-        tipo: "radio",
+        {
+            nome: "Sabor do bolo",
+            tipo: "radio",
 
-        valores: [
-            {
-                nome: "Coca-Cola 2 litros",
-                
-            },
-            {
-                nome: "Guaraná Antartica 2 litros",
-                
-            },
-            {
-                nome: "Fanta Laranja 2 litros",
-                
-            }
-        ]
-    }
+            valores: [
+                {
+                    nome: "Brigadeiro",
+                    preco: 0
+                },
+                {
+                    nome: "Prestígio",
+                    preco: 0
+                },
+                {
+                    nome: "Sensação",
+                    preco: 0
+                },
+                {
+                    nome: "Ninho",
+                    preco: 0
+                },
+                {
+                    nome: "Doce de Leite",
+                    preco: 0
+                },
+                {
+                    nome: "Mousse de Maracujá",
+                    preco: 0
+                }
+            ]
+        },
 
-]
-    }
+        {
+            nome: "Salgado",
+            tipo: "radio",
+
+            valores: [
+                {
+                    nome: "Coxinha",
+                    preco: 0
+                },
+                {
+                    nome: "Risole",
+                    preco: 0
+                },
+                {
+                    nome: "Bolinha de Queijo",
+                    preco: 0
+                }
+            ]
+        },
+
+        {
+            nome: "Doce",
+            tipo: "radio",
+
+            valores: [
+                {
+                    nome: "Brigadeiro",
+                    preco: 0
+                },
+                {
+                    nome: "Beijinho",
+                    preco: 0
+                }
+            ]
+        },
+
+        {
+            nome: "Refrigerante",
+            tipo: "radio",
+
+            valores: [
+                {
+                    nome: "Coca-Cola",
+                    preco: 0
+                },
+                {
+                    nome: "Guaraná",
+                    preco: 0
+                },
+                {
+                    nome: "Fanta",
+                    preco: 0
+                }
+            ]
+        }
+
+    ]
+},
 
 ];

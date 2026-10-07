@@ -768,8 +768,20 @@ formCheckout.addEventListener(
             ).value;
 
 
-        const endereco =
-            document.querySelector("#endereco").value.trim();
+const rua =
+    document.querySelector("#rua").value.trim();
+
+const numero =
+    document.querySelector("#numero").value.trim();
+
+const bairro =
+    document.querySelector("#bairro").value.trim();
+
+const cidade =
+    document.querySelector("#cidade").value.trim();
+
+const referencia =
+    document.querySelector("#referencia").value.trim();
 
 
         const formaPagamento =
@@ -797,30 +809,24 @@ formCheckout.addEventListener(
         }
 
 
-        if (!formaPagamento) {
+if (
+    tipoPedido === "entrega"
+    &&
+    (
+        !rua ||
+        !numero ||
+        !bairro ||
+        !cidade
+    )
+) {
 
-            alert(
-                "Selecione uma forma de pagamento."
-            );
+    alert(
+        "Preencha rua, número, bairro e cidade."
+    );
 
-            return;
+    return;
 
-        }
-
-
-        if (
-            tipoPedido === "entrega"
-            &&
-            !endereco
-        ) {
-
-            alert(
-                "Digite o endereço para entrega."
-            );
-
-            return;
-
-        }
+}
 
 
         // =================================================
@@ -883,20 +889,35 @@ formCheckout.addEventListener(
         // ENTREGA / RETIRADA
         // =================================================
 
-        if (tipoPedido === "entrega") {
+if (tipoPedido === "entrega") {
 
-            mensagem +=
-                "📦 *Entrega*%0A";
+    mensagem +=
+        "📦 *ENTREGA*%0A";
 
-            mensagem +=
-                `📍 ${endereco}%0A%0A`;
+    mensagem +=
+        `📍 ${rua}, ${numero}%0A`;
 
-        } else {
+    mensagem +=
+        `🏘️ ${bairro}%0A`;
 
-            mensagem +=
-                "🏪 *Retirada no local*%0A%0A";
+    mensagem +=
+        `🏙️ ${cidade}%0A`;
 
-        }
+    if (referencia) {
+
+        mensagem +=
+            `📌 *Referência:* ${referencia}%0A`;
+
+    }
+
+    mensagem += "%0A";
+
+} else {
+
+    mensagem +=
+        "🏪 *Retirada no local*%0A%0A";
+
+}
 
 
         // =================================================
@@ -1213,35 +1234,82 @@ fecharModalProduto.addEventListener(
 
 function calcularTotalProduto() {
 
-    // NOVO: produtos com opções genéricas
-    if (produtoSelecionado.opcoes) {
+    // =====================================================
+    // PRODUTOS COM OPÇÕES GENÉRICAS
+    // =====================================================
 
-        let total = 0;
+    if (produtoSelecionado.opcoes) {
 
         const opcoesSelecionadas =
             document.querySelectorAll(
                 '.opcao-produto input[type="radio"]:checked'
             );
 
-        opcoesSelecionadas.forEach(
-            function (opcao) {
 
-                total +=
-                    Number(
+        // Verifica se alguma opção possui preço
+        const possuiPrecoNasOpcoes =
+            Array.from(opcoesSelecionadas).some(
+                function (opcao) {
+
+                    return Number(
                         opcao.dataset.preco
-                    );
+                    ) > 0;
 
-            }
-        );
+                }
+            );
+
+
+        let total = 0;
+
+
+        // =================================================
+        // SE AS OPÇÕES POSSUEM PREÇO
+        // O PREÇO VEM DAS OPÇÕES
+        // =================================================
+
+        if (possuiPrecoNasOpcoes) {
+
+            opcoesSelecionadas.forEach(
+                function (opcao) {
+
+                    total +=
+                        Number(
+                            opcao.dataset.preco
+                        );
+
+                }
+            );
+
+        }
+
+
+        // =================================================
+        // SE TODAS AS OPÇÕES SÃO R$ 0
+        // USA O PREÇO BASE DO PRODUTO
+        // =================================================
+
+        else {
+
+            total =
+                Number(
+                    produtoSelecionado.preco || 0
+                );
+
+        }
+
 
         modalProdutoTotal.textContent =
             formatarMoeda(total);
 
         return;
+
     }
 
 
-    // SISTEMA ANTIGO: tamanhos
+    // =====================================================
+    // SISTEMA ANTIGO: TAMANHOS
+    // =====================================================
+
     const tamanhoSelecionado =
         document.querySelector(
             'input[name="tamanho"]:checked'
@@ -1256,6 +1324,7 @@ function calcularTotalProduto() {
             );
 
         return;
+
     }
 
 
@@ -1265,7 +1334,10 @@ function calcularTotalProduto() {
         );
 
 
-    // SISTEMA ANTIGO: adicionais
+    // =====================================================
+    // SISTEMA ANTIGO: ADICIONAIS
+    // =====================================================
+
     const adicionais =
         document.querySelectorAll(
             '.opcao-produto input[type="checkbox"]:checked'
@@ -1326,62 +1398,117 @@ confirmarProduto.addEventListener(
             produtoSelecionado.nome;
 
 
-        // =================================================
-        // NOVO: PRODUTOS COM OPÇÕES GENÉRICAS
-        // =================================================
+// =================================================
+// NOVO: PRODUTOS COM OPÇÕES GENÉRICAS
+// =================================================
 
-        if (produtoSelecionado.opcoes) {
+if (produtoSelecionado.opcoes) {
 
-            const opcoesSelecionadas =
-                document.querySelectorAll(
-                    '.opcao-produto input[type="radio"]:checked'
-                );
-
-
-            opcoesSelecionadas.forEach(
-                function (opcao) {
-
-                    preco +=
-                        Number(
-                            opcao.dataset.preco
-                        );
-
-                }
-            );
+    const opcoesSelecionadas =
+        document.querySelectorAll(
+            '.opcao-produto input[type="radio"]:checked'
+        );
 
 
-            // Guarda as opções escolhidas
-            let descricaoOpcoes = [];
+    // Verifica se alguma opção possui preço
+    const possuiPrecoNasOpcoes =
+        Array.from(opcoesSelecionadas).some(
+            function (opcao) {
+
+                return Number(
+                    opcao.dataset.preco
+                ) > 0;
+
+            }
+        );
 
 
-            opcoesSelecionadas.forEach(
-                function (opcao) {
+    // =================================================
+    // SE AS OPÇÕES POSSUEM PREÇO
+    // O PREÇO VEM DAS OPÇÕES
+    // =================================================
 
-                    descricaoOpcoes.push(
-                        opcao.value
+    if (possuiPrecoNasOpcoes) {
+
+        preco = 0;
+
+        opcoesSelecionadas.forEach(
+            function (opcao) {
+
+                preco +=
+                    Number(
+                        opcao.dataset.preco
                     );
 
-                }
+            }
+        );
+
+    }
+
+
+    // =================================================
+    // SE TODAS AS OPÇÕES SÃO R$ 0
+    // USA O PREÇO BASE DO PRODUTO
+    // =================================================
+
+    else {
+
+        preco =
+            Number(
+                produtoSelecionado.preco || 0
             );
 
-
-            const nomeCompleto =
-                `${nomeProduto} (${descricaoOpcoes.join(" + ")})`;
+    }
 
 
-            adicionarProdutoCarrinho(
-                nomeCompleto,
-                preco
+    // =================================================
+    // GUARDA AS OPÇÕES ESCOLHIDAS
+    // =================================================
+
+    let descricaoOpcoes = [];
+
+
+    opcoesSelecionadas.forEach(
+        function (opcao) {
+
+            descricaoOpcoes.push(
+                opcao.value
             );
 
-
-            modalProduto.classList.remove(
-                "aberto"
-            );
-
-
-            return;
         }
+    );
+
+
+    // =================================================
+    // NOME NO CARRINHO
+    // =================================================
+
+    const nomeCompleto =
+        `${nomeProduto} (${descricaoOpcoes.join(" + ")})`;
+
+
+    // =================================================
+    // ADICIONA AO CARRINHO
+    // =================================================
+
+    adicionarProdutoCarrinho(
+        nomeCompleto,
+        preco
+    );
+
+
+    // =================================================
+    // FECHA O MODAL
+    // =================================================
+
+    modalProduto.classList.remove(
+        "aberto"
+    );
+
+
+    return;
+
+}
 
 
         // =================================================
