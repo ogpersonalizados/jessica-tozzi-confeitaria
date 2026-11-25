@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123d2c">
+  <meta name="description" content="Conheça as sobremesas especiais de Natal da Jéssica Tozi Confeitaria e faça sua encomenda pelo WhatsApp.">
+
+  <title>Natal | Jéssica Tozi Confeitaria</title>
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon-rosa.png">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    :root {
+      --verde-natal: #123d2c;
+      --verde-escuro: #0b2b20;
+      --vermelho-natal: #8b1e2d;
+      --dourado: #d4af37;
+      --dourado-claro: #f0c64f;
+      --branco: #ffffff;
+      --fundo-claro: #f7f5ef;
+      --texto: #292b27;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--verde-escuro);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
+
+    .navbar-natal {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: var(--verde-escuro);
+      border-bottom: 2px solid var(--dourado);
+      box-shadow: 0 5px 20px rgba(0,0,0,.16);
+    }
+
+    .nav-container-natal {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-logo-natal img {
+      display: block;
+      width: auto;
+      height: 66px;
+      object-fit: contain;
+    }
+
+    .btn-voltar-natal {
+      display: inline-block;
+      padding: 11px 20px;
+      border: 1px solid var(--dourado);
+      border-radius: 999px;
+      background: var(--dourado);
+      color: var(--verde-escuro);
+      text-decoration: none;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn-voltar-natal:hover {
+      background: var(--dourado-claro);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       DESTAQUE PRINCIPAL
+    ========================= */
+
+/* =========================
+   BANNER HERO NATAL
+========================= */
+
+.hero-natal {
+  width: 100%;
+  background: var(--verde-escuro);
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid var(--dourado);
+}
+
+.hero-natal img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1920px;
+  margin: auto;
+}
+
+    .hero-selo {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--dourado-claro);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-natal h1 {
+      margin: 0 0 16px;
+      color: var(--branco);
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .hero-natal h1 span {
+      color: var(--dourado-claro);
+      font-style: italic;
+    }
+
+    .hero-natal p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #f3eee2;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       INTRODUÇÃO
+    ========================= */
+
+    .apresentacao-natal {
+      padding: 54px 20px 20px;
+      text-align: center;
+      background: var(--fundo-claro);
+    }
+
+    .apresentacao-natal h2,
+    .titulo-natal {
+      margin: 0 0 14px;
+      color: var(--verde-natal);
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 600;
+    }
+
+    .apresentacao-natal h2 span,
+    .titulo-natal span {
+      color: var(--vermelho-natal);
+      font-style: italic;
+    }
+
+    .apresentacao-natal p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #5b5b54;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       PRODUTOS
+    ========================= */
+
+    .sobremesas-natal {
+      padding: 55px 20px 85px;
+      background: var(--fundo-claro);
+      text-align: center;
+    }
+
+    .sobremesas-natal .subtitulo {
+      margin: 0 auto 34px;
+      color: #66665f;
+      line-height: 1.6;
+    }
+
+    .grid-sobremesas {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+      max-width: 1160px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .sobremesa-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-width: 0;
+      border: 1px solid rgba(18,61,44,.10);
+      border-top: 4px solid var(--dourado);
+      border-radius: 16px;
+      background: var(--branco);
+      box-shadow: 0 10px 28px rgba(20,35,25,.09);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .sobremesa-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 36px rgba(20,35,25,.15);
+    }
+
+    .sobremesa-card img {
+      display: block;
+      width: 100%;
+      height: 245px;
+      padding: 10px;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .sobremesa-conteudo {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 4px 20px 21px;
+    }
+
+    .sobremesa-card h3 {
+      margin: 10px 0 10px;
+      color: var(--verde-natal);
+      font-family: Georgia, serif;
+      font-size: 23px;
+    }
+
+    .sobremesa-card p {
+      margin: 0 0 12px;
+      color: #5c5c56;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .rendimento {
+      margin-top: auto !important;
+      padding-top: 8px;
+      color: var(--verde-natal) !important;
+      font-weight: 700;
+    }
+
+    .preco-natal {
+      margin: 5px 0 15px;
+      color: var(--vermelho-natal);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .btn-pedido-natal {
+      display: block;
+      width: 100%;
+      margin-top: auto;
+      padding: 13px 16px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--dourado);
+      color: var(--verde-escuro);
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .btn-pedido-natal:hover {
+      background: var(--dourado-claro);
+      transform: scale(1.03);
+    }
+
+    /* =========================
+       ENCOMENDAS
+    ========================= */
+
+    .encomendas-natal {
+      padding: 65px 20px;
+      background: var(--verde-natal);
+      color: var(--branco);
+      text-align: center;
+      border-top: 3px solid var(--dourado);
+    }
+
+    .encomendas-natal h2 {
+      margin: 0 0 14px;
+      color: var(--dourado-claro);
+      font-family: Georgia, serif;
+      font-size: clamp(27px, 4vw, 36px);
+    }
+
+    .encomendas-natal p {
+      max-width: 650px;
+      margin: 0 auto 24px;
+      color: #f1eee5;
+      line-height: 1.7;
+    }
+
+    .btn-cta-natal {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 999px;
+      background: var(--vermelho-natal);
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .btn-cta-natal:hover {
+      background: #a82b3d;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    .footer-natal {
+      padding: 27px 20px;
+      border-top: 3px solid var(--dourado);
+      background: var(--verde-escuro);
+      color: var(--branco);
+      text-align: center;
+    }
+
+    .footer-natal p {
+      margin: 4px 0;
+      color: #e6e2d8;
+      font-size: 13px;
+    }
+
+    .footer-natal strong {
+      color: var(--dourado-claro);
+    }
+
+    /* =========================
+       WHATSAPP FLUTUANTE
+    ========================= */
+
+    .whatsapp-float-natal {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      display: flex;
+      width: 60px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--dourado);
+      border-radius: 50%;
+      background: #25D366;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-float-natal:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float-natal img {
+      display: block;
+      width: 31px;
+      height: 31px;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 900px) {
+      .grid-sobremesas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container-natal {
+        flex-direction: column;
+        gap: 9px;
+        padding: 10px 15px 13px;
+      }
+
+      .nav-logo-natal img {
+        height: 48px;
+      }
+
+      .btn-voltar-natal {
+        padding: 9px 17px;
+        font-size: 13px;
+      }
+
+      .hero-natal {
+        padding: 58px 18px 64px;
+      }
+
+      .hero-natal p {
+        font-size: 15px;
+      }
+
+      .apresentacao-natal {
+        padding-top: 42px;
+      }
+
+      .sobremesas-natal {
+        padding: 42px 15px 60px;
+      }
+
+      .grid-sobremesas {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        max-width: 420px;
+      }
+
+      .sobremesa-card img {
+        height: 235px;
+      }
+
+      .encomendas-natal {
+        padding: 52px 18px;
+      }
+
+      .whatsapp-float-natal {
+        width: 55px;
+        height: 55px;
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+
+    /* =========================================
+   INFORMAÇÕES IMPORTANTES - NATAL
+========================================= */
+
+.informacoes-natal {
+    padding: 60px 20px;
+    background: var(--verde-escuro);
+    text-align: center;
+    border-top: 3px solid var(--dourado);
+    border-bottom: 3px solid var(--dourado);
+}
+
+.informacoes-natal h2 {
+    color: var(--dourado);
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+
+.informacoes-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--dourado);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.info-card h3 {
+    color: var(--verde-escuro);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .informacoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .informacoes-natal {
+        padding: 45px 15px;
+    }
+
+    .informacoes-natal h2 {
+        font-size: 1.6rem;
+    }
+
+    .informacoes-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       CABEÇALHO
+  ========================= -->
+
+  <header class="navbar-natal">
+
+    <div class="nav-container-natal">
+
+      <a class="nav-logo-natal"
+         href="/index.html"
+         aria-label="Jéssica Tozi Confeitaria - página inicial">
+
+        <img src="/paginas/imagens/natal/natal.png"
+             alt="Jéssica Tozi Confeitaria">
+
+      </a>
+
+      <a href="/index.html" class="btn-voltar-natal">
+        ← Voltar para o site
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+<!-- =========================
+     BANNER PRINCIPAL
+========================= -->
+
+<section class="hero-natal">
+
+  <img
+    src="/paginas/imagens/natal/banner-hero-natal.png"
+    alt="Natal da Jéssica Tozi Confeitaria"
+  >
+
+</section>
+
+
+    <!-- =========================
+         APRESENTAÇÃO
+    ========================= -->
+
+    <section class="apresentacao-natal">
+
+      <h2>
+        Nossas <span>Sobremesas</span> de Natal
+      </h2>
+
+      <p>
+        Escolha sua sobremesa favorita e deixe a sua comemoração
+        ainda mais gostosa.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUTOS
+    ========================= -->
+
+    <section class="sobremesas-natal"
+             aria-label="Sobremesas de Natal">
+
+      <p class="subtitulo">
+        Todas as opções abaixo servem até 10 pessoas.
+      </p>
+
+      <div class="grid-sobremesas">
+
+
+        <!-- OURO BRANCO -->
+
+        <article class="sobremesa-card">
+
+          <img
+            src="/paginas/imagens/natal/ouro-branco.png"
+            alt="Sobremesa Ouro Branco"
+            loading="lazy"
+          >
+
+          <div class="sobremesa-conteudo">
+
+            <h3>Ouro Branco</h3>
+
+            <p>
+              Brigadeiro branco, brigadeiro meio amargo,
+              pedaços de bombom, finalizado com mousse de
+              ninho e mais bombons Ouro Branco.
+            </p>
+
+            <p class="rendimento">
+              Serve até 10 pessoas
+            </p>
+
+            <div class="preco-natal">
+              R$ 120,00
+            </div>
+
+            <a
+              class="btn-pedido-natal"
+              href="https://wa.me/553592473598?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20sobremesa%20Ouro%20Branco%20do%20cat%C3%A1logo%20de%20Natal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pedir pelo WhatsApp
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- TORTA DE LIMÃO -->
+
+        <article class="sobremesa-card">
+
+          <img
+            src="/paginas/imagens/natal/torta-de-limao.png"
+            alt="Torta de limão"
+            loading="lazy"
+          >
+
+          <div class="sobremesa-conteudo">
+
+            <h3>Torta de Limão</h3>
+
+            <p>
+              Base farofinha doce amanteigada, mousse de limão,
+              merengue suíço, decorado com fatias e raspas de limão.
+            </p>
+
+            <p class="rendimento">
+              Serve até 10 pessoas
+            </p>
+
+            <div class="preco-natal">
+              R$ 120,00
+            </div>
+
+            <a
+              class="btn-pedido-natal"
+              href="https://wa.me/553592473598?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20Torta%20de%20Lim%C3%A3o%20do%20cat%C3%A1logo%20de%20Natal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pedir pelo WhatsApp
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- TORTA DE MARACUJÁ -->
+
+        <article class="sobremesa-card">
+
+          <img
+            src="/paginas/imagens/natal/torta-de-maracuja.png"
+            alt="Torta de maracujá"
+            loading="lazy"
+          >
+
+          <div class="sobremesa-conteudo">
+
+            <h3>Torta de Maracujá</h3>
+
+            <p>
+              Base farofinha doce amanteigada, mousse de maracujá,
+              brigadeiro meio amargo, finalizado com geleia
+              de maracujá caseira.
+            </p>
+
+            <p class="rendimento">
+              Serve até 10 pessoas
+            </p>
+
+            <div class="preco-natal">
+              R$ 120,00
+            </div>
+
+            <a
+              class="btn-pedido-natal"
+              href="https://wa.me/553592473598?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20Torta%20de%20Maracuj%C3%A1%20do%20cat%C3%A1logo%20de%20Natal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pedir pelo WhatsApp
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- SURPRESA DE UVA -->
+
+        <article class="sobremesa-card">
+
+          <img
+            src="/paginas/imagens/natal/surpresa-de-uva.png"
+            alt="Sobremesa Surpresa de Uva"
+            loading="lazy"
+          >
+
+          <div class="sobremesa-conteudo">
+
+            <h3>Surpresa de Uva</h3>
+
+            <p>
+              Mousse de ninho, uvas verdes sem sementes,
+              mais mousse de ninho, finalizado com brigadeiro
+              meio amargo, granulados e uvas verdes.
+            </p>
+
+            <p class="rendimento">
+              Serve até 10 pessoas
+            </p>
+
+            <div class="preco-natal">
+              R$ 120,00
+            </div>
+
+            <a
+              class="btn-pedido-natal"
+              href="https://wa.me/553592473598?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20sobremesa%20Surpresa%20de%20Uva%20do%20cat%C3%A1logo%20de%20Natal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pedir pelo WhatsApp
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MERENGUE DE MORANGO -->
+
+        <article class="sobremesa-card">
+
+          <img
+            src="/paginas/imagens/natal/merengue-de-morango.png"
+            alt="Merengue de morango"
+            loading="lazy"
+          >
+
+          <div class="sobremesa-conteudo">
+
+            <h3>Merengue de Morango</h3>
+
+            <p>
+              Mousse de ninho, morangos em pedaços,
+              e mais mousse de ninho, suspiros e finalizado
+              com morango em pedaços.
+            </p>
+
+            <p class="rendimento">
+              Serve até 10 pessoas
+            </p>
+
+            <div class="preco-natal">
+              R$ 120,00
+            </div>
+
+            <a
+              class="btn-pedido-natal"
+              href="https://wa.me/553592473598?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Merengue%20de%20Morango%20do%20cat%C3%A1logo%20de%20Natal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pedir pelo WhatsApp
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+    <!-- INFORMAÇÕES IMPORTANTES -->
+
+<section class="informacoes-natal">
+
+    <h2>Informações Importantes</h2>
+
+    <div class="informacoes-grid">
+
+        <div class="info-card">
+            <span>📅</span>
+            <h3>Pedidos até 10/12</h3>
+            <p>Garanta sua encomenda dentro do prazo.</p>
+        </div>
+
+        <div class="info-card">
+            <span>🎄</span>
+            <h3>Agenda Limitada</h3>
+            <p>As vagas são limitadas. Antecipe seu pedido!</p>
+        </div>
+
+        <div class="info-card">
+            <span>💰</span>
+            <h3>50% de Sinal</h3>
+            <p>Pedidos confirmados somente com o pagamento de 50% do valor.</p>
+        </div>
+
+        <div class="info-card">
+            <span>💳</span>
+            <h3>Formas de Pagamento</h3>
+            <p>Aceitamos cartão, Pix e dinheiro.</p>
+        </div>
+
+        <div class="info-card">
+            <span>✨</span>
+            <h3>Parcelamento</h3>
+            <p>Parcele em até 3x sem juros.</p>
+        </div>
+
+        <div class="info-card">
+            <span>🚚</span>
+            <h3>Entrega Gratuita</h3>
+            <p>Entregas gratuitas em Cambuí/MG.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         ENCOMENDAS
+    ========================= -->
+
+    <section class="encomendas-natal">
+
+      <h2>
+        Seu Natal merece uma sobremesa especial!
+      </h2>
+
+      <p>
+        Entre em contato pelo WhatsApp para fazer sua
+        encomenda e consultar disponibilidade.
+      </p>
+
+      <a
+        class="btn-cta-natal"
+        href="https://wa.me/553592473598?text=Ol%C3%A1%21%20Vim%20pelo%20cat%C3%A1logo%20de%20Natal%20da%20J%C3%A9ssica%20Tozi%20Confeitaria%20e%20gostaria%20de%20fazer%20uma%20encomenda."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fazer encomenda
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       RODAPÉ
+  ========================= -->
+
+  <footer class="footer-natal">
+
+    <p>
+      <strong>Jéssica Tozi Confeitaria</strong>
+    </p>
+
+    <p>
+      Um Natal cheio de carinho e momentos doces.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       WHATSAPP FLUTUANTE
+  ========================= -->
+
+  <a
+    class="whatsapp-float-natal"
+    href="https://wa.me/553592473598?text=Ol%C3%A1%21%20Vim%20pelo%20cat%C3%A1logo%20de%20Natal%20da%20J%C3%A9ssica%20Tozi%20Confeitaria."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Fale com a Jéssica pelo WhatsApp"
+  >
+
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+      alt=""
+    >
+
+  </a>
+
+</body>
+</html>

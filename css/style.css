@@ -32,7 +32,7 @@ html {
 ======================= */
 
 .promo-bar {
-  background: #c06c84;
+  background: #0b2b20;
   color: white;
   display: flex;
   align-items: center;
@@ -958,5 +958,72 @@ textarea {
     .logo img {
     height: 65px;
   }
+
+}
+
+/* =========================================
+   AJUSTE MOBILE - BARRA E CABEÇALHO
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Barra promocional */
+    .promo-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 66px;
+        z-index: 2000;
+    }
+
+    /* Reserva o espaço ocupado pela barra */
+    body {
+        padding-top: 66px;
+    }
+
+    /* Cabeçalho acompanha o fluxo da página */
+    .header {
+        position: sticky;
+        top: 66px;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Evita que o conteúdo do banner fique escondido */
+    .hero {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+}
+
+/* CABEÇALHO MAIS COMPACTO NO MOBILE */
+
+@media (max-width: 768px) {
+
+    .container-header {
+        padding: 8px 15px;
+        gap: 5px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .nav {
+        gap: 5px;
+    }
+
+    .nav a {
+        margin: 3px;
+        font-size: 12px;
+    }
+
+    .btn-header {
+        margin-top: 5px;
+        padding: 8px 15px;
+        font-size: 13px;
+    }
 
 }
